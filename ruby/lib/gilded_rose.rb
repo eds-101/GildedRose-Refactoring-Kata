@@ -18,15 +18,19 @@ class GildedRose
               item.quality = item.quality + 1
             end
         end
-      elsif item.name == "Aged Brie" && item.quality < 50
+      end
+
+      if item.name == "Aged Brie" && item.quality < 50
         item.quality = item.quality + 1
-      else
+      end
+      if (item.name != "Aged Brie" && item.name != "Backstage passes to a TAFKAL80ETC concert")
         if item.quality > 0
             item.quality = item.quality - 1
         end
       end
 
-        item.sell_in = item.sell_in - 1
+      item.sell_in = item.sell_in - 1
+
       if item.sell_in < 0
         if item.name != "Aged Brie"
           if item.name != "Backstage passes to a TAFKAL80ETC concert"
