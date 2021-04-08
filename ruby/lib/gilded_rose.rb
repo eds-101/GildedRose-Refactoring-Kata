@@ -8,7 +8,7 @@ class GildedRose
     @items.each do |item|
       next if item.name == "Sulfuras, Hand of Ragnaros"
 
-      if (item.name == "Aged Brie" || item.name == "Backstage passes to a TAFKAL80ETC concert")
+      if item.name == "Backstage passes to a TAFKAL80ETC concert"
         if item.quality < 50
           item.quality = item.quality + 1
           if item.name == "Backstage passes to a TAFKAL80ETC concert"
@@ -24,6 +24,8 @@ class GildedRose
             end
           end
         end
+      elsif item.name == "Aged Brie" && item.quality < 50
+        item.quality = item.quality + 1
       else
         if item.quality > 0
             item.quality = item.quality - 1
