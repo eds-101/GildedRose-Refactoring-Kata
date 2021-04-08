@@ -24,13 +24,12 @@ class GildedRose
             end
           end
         end
-      end
-        
-      if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
+      else
         if item.quality > 0
             item.quality = item.quality - 1
         end
       end
+
         item.sell_in = item.sell_in - 1
       if item.sell_in < 0
         if item.name != "Aged Brie"
