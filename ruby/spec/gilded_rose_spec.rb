@@ -12,15 +12,30 @@ describe GildedRose do
     describe "Brie" do
 
       it "increases in quality each day" do
-        context "*1 when sell in > 0" do
+        context "+1 whilst sell in is positive" do
 
         end
-        context "*2 when sell in <= 0" do
+        context "+2 when sell in is 0 or less" do
 
         end
       end
-      it "has a maximum quality of 50" do
+      it "has a maximum quality score of 50" do
 
+      end
+
+    end
+
+    describe "Backstage passes" do
+      it "increases in quality each day" do
+        context "+2 when sell in is 10-6 days out" do
+          
+        end
+        context "+3 when sell in is 5-0 days out" do
+          
+        end
+      end
+      it "loses all quality once concert passes" do
+      
       end
 
     end
