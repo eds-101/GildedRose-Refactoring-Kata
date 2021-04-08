@@ -9,6 +9,22 @@ describe GildedRose do
       expect(items[0].name).to eq "foo"
     end
 
+    describe "Brie" do
+
+      it "increases in quality each day" do
+        context "*1 when sell in > 0" do
+
+        end
+        context "*2 when sell in <= 0" do
+
+        end
+      end
+      it "has a maximum quality of 50" do
+
+      end
+
+    end
+
     describe "Sulfuras" do
       before(:all) do
         @items = [Item.new("Sulfuras, Hand of Ragnaros", 5, 80)]
