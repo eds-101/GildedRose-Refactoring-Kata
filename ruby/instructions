@@ -1,0 +1,27 @@
+# Gilded Rose Refactoring Kata
+
+Task 
+Update inventory, due to goods degrading in quality
+
+Schema
+Item [ “name”, sell-in (int), quality (int) ]
+Run through GildedRose.update_quality() x number of days
+
+Rules
+- Yes: change UpdateQuality method
+- Yes: add new code
+- No: change Item class or properties
+
+EACH DAY items lower value for:
+Sell-In: number of days we have to sell the itemQuality: denotes how valuable the item is
+
+General changes
+	Minimum Quality = 0, Max = 50
+	if Sell-In == 0, Quality decreases x2
+	NEW Conjured items - Quality decreases * 2 (any Sell-In value)
+
+Specific item changes
+Aged Brie - Quality increases with age
+Backstage passes - Quality increases with age [ 10-6 days: +2, 5-0 days: +3 ] 
+Backstage passes - Quality == 0 when Sell-In == 0
+Sulfuras - Quality = 80 && never decreases, never has to be sold
