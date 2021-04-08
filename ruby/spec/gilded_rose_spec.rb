@@ -10,17 +10,24 @@ describe GildedRose do
     end
 
     describe "Brie" do
-
       describe "increases in quality each day" do
-        context "+1 whilst sell in is positive" do
-
+        it "+1 whilst sell in is positive" do
+          items = [Item.new("Aged Brie", 2, 4)]
+          GildedRose.new(items).update_quality()
+          expect(items[0].quality).to eq 5
         end
-        context "+2 when sell in is 0 or less" do
-
+        it "+2 when sell in is 0 or less" do
+          items = [Item.new("Aged Brie", 0, 4)]
+          GildedRose.new(items).update_quality()
+          expect(items[0].quality).to eq 6
+          GildedRose.new(items).update_quality()
+          expect(items[0].quality).to eq 8
         end
-      end
-      it "has a maximum quality score of 50" do
-
+        it "has a maximum quality score of 50" do
+          items = [Item.new("Aged Brie", -2, 49)]
+          5.times { GildedRose.new(items).update_quality() }
+          expect(items[0].quality).to eq 50
+        end
       end
 
     end
